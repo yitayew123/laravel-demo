@@ -81,11 +81,33 @@ Route::controller(StudentController::class)->group(function(){
     Route::get('about/{name}','about'); // Dynamic Route
 });
 
+// Middleware Example (Global Middleware)
+Route::view('middleware','middleware');
 
+// Middleware Group on Single Route
+Route::view('middleware2','middleware2')->middleware('check1');
+Route::view('middleware3','middleware3');
 
+// Middleware Group on Multiple Routes
 
+Route::middleware('check1')->group(function(){
+    Route::view('m1','middleware3');
+    Route::view('m2','middleware3');
+    Route::view('m3','middleware3');
+    Route::view('m4','middleware3');
+});
 
+// Assigning One or More Middleware to Route
+use App\Http\Middleware\CheckAge3;
+use App\Http\Middleware\CheckCountry2;
 
+Route::view('mw4','middleware4')->middleware([CheckAge3::class,CheckCountry2::class]);
+Route::view('mw5','middleware5')->middleware(CheckCountry2::class);
+
+// Connecting to MYSQL Database
+
+use App\Http\Controllers\DatabaseController;
+Route::get('dbuser',[DatabaseController::class,'users']);
 
 
 
