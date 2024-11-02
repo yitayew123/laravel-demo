@@ -105,9 +105,17 @@ Route::view('mw4','middleware4')->middleware([CheckAge3::class,CheckCountry2::cl
 Route::view('mw5','middleware5')->middleware(CheckCountry2::class);
 
 // Connecting to MYSQL Database
-
 use App\Http\Controllers\DatabaseController;
 Route::get('dbuser',[DatabaseController::class,'users']);
+
+// Model in Laravel
+use App\Http\Controllers\StudentController2;
+Route::get('students',[StudentController2::class,'getstudent']);
+
+// Database Quiery Builder
+use App\Http\Controllers\DatabaseBuilder;
+Route::get('quierybuilder',[DatabaseBuilder::class,'quiery']);
+
 
 
 
