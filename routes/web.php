@@ -112,9 +112,12 @@ Route::get('dbuser',[DatabaseController::class,'users']);
 use App\Http\Controllers\StudentController2;
 Route::get('students',[StudentController2::class,'getstudent']);
 
-// Database Quiery Builder
+// Database Class Quiery Builder
 use App\Http\Controllers\DbQueryBuilder;
 Route::get('querybuilder',[DbQueryBuilder::class,'Query']);
+
+// Eleouquent Model Query Builder
+
 
 
 
