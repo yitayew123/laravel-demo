@@ -113,9 +113,8 @@ use App\Http\Controllers\StudentController2;
 Route::get('students',[StudentController2::class,'getstudent']);
 
 // Database Quiery Builder
-use App\Http\Controllers\DatabaseBuilder;
-Route::get('quierybuilder',[DatabaseBuilder::class,'quiery']);
-
+use App\Http\Controllers\DbQueryBuilder;
+Route::get('querybuilder',[DbQueryBuilder::class,'Query']);
 
 
 
