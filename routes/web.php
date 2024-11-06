@@ -117,13 +117,22 @@ use App\Http\Controllers\DbQueryBuilder;
 Route::get('querybuilder',[DbQueryBuilder::class,'Query']);
 
 // Eleouquent Model Query Builder
+use App\Http\Controllers\EmodelQueryBuilder;
+Route::get('emqb',[EmodelQueryBuilder::class,'equery']);
 
+// Route Methods Examples
+use App\Http\Controllers\RouteMethodsExample;
+// Route::get('methodsexample',[RouteMethodsExample::class,'get']);
+// Route::post('methodsexample',[RouteMethodsExample::class,'post']);
+// Route::put('methodsexample',[RouteMethodsExample::class,'put']);
+// Route::delete('methodsexample',[RouteMethodsExample::class,'delete']);
 
+// For Calling any Methods we use any method
+// Route::any('methodsexample',[RouteMethodsExample::class,'any']);
 
+// For Calling match method we use match methods
+Route::match(['get','post'],'methodsexample',[RouteMethodsExample::class,'group1']);
+Route::match(['put','delete'],'methodsexample',[RouteMethodsExample::class,'group2']);
 
-
-
-
-
-
-
+// Rout For RouteMethodExample blade
+Route::view('form','RouteMethodExample');
