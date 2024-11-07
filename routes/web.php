@@ -136,3 +136,16 @@ Route::match(['put','delete'],'methodsexample',[RouteMethodsExample::class,'grou
 
 // Rout For RouteMethodExample blade
 Route::view('form','RouteMethodExample');
+
+// Route For HTTP Request class
+Route::view('user-form','RequestClass');
+use App\Http\Controllers\RequestClass;
+Route::post('user-form2',[RequestClass::class,'login']);
+
+// Session in Laravel
+Route::view('loginsession','SessionView1');
+Route::view('profilesession','SessionView2');
+
+use App\Http\Controllers\SessionController;
+Route::post('loginsession',[SessionController::class,'login']);
+Route::get('logout',[SessionController::class,'logout']);
