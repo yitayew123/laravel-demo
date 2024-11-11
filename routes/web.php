@@ -149,3 +149,15 @@ Route::view('profilesession','SessionView2');
 use App\Http\Controllers\SessionController;
 Route::post('loginsession',[SessionController::class,'login']);
 Route::get('logout',[SessionController::class,'logout']);
+
+
+// File Uploadding |Image
+Route::view('imageupload','UploadFile');
+use App\Http\Controllers\FileUpload;
+Route::post('imageupload',[FileUpload::class,'uploadimage']);
+
+// Localization Route
+Route::view('localization','localization');
+Route::view('LocalizationAbout','LocalizationAbout');
+
+
