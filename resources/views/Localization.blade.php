@@ -1,4 +1,11 @@
 <div>
+    <h1>Choose Your Language</h1>
+    <a href="/setlang/en">English</a>
+    <br />
+    <a href="/setlang/Amh">Amharic</a>
+    <br />
+    <a href="/setlang/Oro">Afaan Oromo</a>
+
     <!-- <h1>How Are You</h1> -->
     <h1>{{__('Localization.localization')}}</h1>
      <br>
@@ -11,3 +18,4 @@
 <a href="Contactus">{{__('Localization.contactus')}}</a>
 <br>
 <a href="Home">{{__('Localization.home')}}</a>
+

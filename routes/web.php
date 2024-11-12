@@ -154,6 +154,9 @@ Route::get('logout',[SessionController::class,'logout']);
 // File Uploadding |Image
 Route::view('imageupload','UploadFile');
 use App\Http\Controllers\FileUpload;
+use Illuminate\Contracts\Session\Session;
+use Illuminate\Support\Facades\Lang;
+
 Route::post('imageupload',[FileUpload::class,'uploadimage']);
 
 // Localization Route
@@ -161,3 +164,9 @@ Route::view('localization','localization');
 Route::view('LocalizationAbout','LocalizationAbout');
 
 
+// Inserting Data Using Form
+Route::view('add-employee','add-employee');
+
+// Importing Controller
+use App\Http\Controllers\EmployeeController;
+Route::post('add-employee',[EmployeeController::class,'Add_Employee']);
