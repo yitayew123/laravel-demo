@@ -169,4 +169,16 @@ Route::view('add-employee','add-employee');
 
 // Importing Controller
 use App\Http\Controllers\EmployeeController;
+// Route For adding Records
 Route::post('add-employee',[EmployeeController::class,'Add_Employee']);
+
+// Route For Fetching Records 
+Route::get('list-employee',[EmployeeController::class,'list']);
+
+// Route For Deletting Records
+Route::get('delete/{id}',[EmployeeController::class,'delete']);
+
+// Route For Edit
+Route::get('edit/{id}',[EmployeeController::class,'edit']);
+// Route For editstudent
+Route::put('edit-employee/{id}', [EmployeeController::class,'editstudent']);
