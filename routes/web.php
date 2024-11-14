@@ -182,3 +182,5 @@ Route::get('delete/{id}',[EmployeeController::class,'delete']);
 Route::get('edit/{id}',[EmployeeController::class,'edit']);
 // Route For editstudent
 Route::put('edit-employee/{id}', [EmployeeController::class,'editstudent']);
+Route::put('edit-employee/{id}', [EmployeeController::class,'editstudent']);
+
