@@ -184,3 +184,5 @@ Route::get('edit/{id}',[EmployeeController::class,'edit']);
 Route::put('edit-employee/{id}', [EmployeeController::class,'editstudent']);
 Route::put('edit-employee/{id}', [EmployeeController::class,'editstudent']);
 
+// Searching Employees From the database
+Route::get('search',[EmployeeController::class,'search']);

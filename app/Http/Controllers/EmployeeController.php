@@ -2,6 +2,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\employee;
+use GuzzleHttp\Psr7\Request as Psr7Request;
+
 class EmployeeController extends Controller
 {
     function Add_Employee(Request $request){
@@ -20,7 +22,7 @@ class EmployeeController extends Controller
         }
     }
     function list(){
-        $employeedata = employee::all();
+        $employeedata = employee::paginate(3);
         // return $employeedata;
         return view('list-employee',['data'=>$employeedata]);
     }
@@ -51,5 +53,10 @@ class EmployeeController extends Controller
             return "Employee Details is not Updated";
         }
 
+    }
+    function search(Request $request){
+        // return $request->search;
+        $EmployeeDataSearch = employee::where("name","like","%$request->search%")->get();
+        return view('list-employee',['data'=>$EmployeeDataSearch,'search'=>$request->search]);  
     }
 }
