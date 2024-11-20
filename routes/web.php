@@ -186,3 +186,12 @@ Route::put('edit-employee/{id}', [EmployeeController::class,'editstudent']);
 
 // Searching Employees From the database
 Route::get('search',[EmployeeController::class,'search']);
+
+// Relationship in Database
+use App\Http\Controllers\RelationshipController;
+// Route For One-to-One Relationship
+Route::get('relationship',[RelationshipController::class,'product_list']);
+// Route For One-to-Many Relationship
+Route::get('one-many',[RelationshipController::class,'One_to_Many']);
+// Route for Many-to-One Relationship
+Route::get('many-one',[RelationshipController::class,'Many_to_One']);
