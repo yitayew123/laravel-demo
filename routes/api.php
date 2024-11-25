@@ -15,4 +15,15 @@ Route::get('testapi', function(){
 // Creating Route for EmployeeAPI
 use App\Http\Controllers\ApiController;
 Route::get('employeeapi',[ApiController::class,"APIEmployee"]);
+// Add Employee Route
 Route::post('add-employeeapi',[ApiController::class,'addemployee']);
+// Update Employee Route
+Route::put('update-employee',[ApiController::class,'UpdateEmployee']);
+// Delete Employee Route
+Route::delete('delete-employee/{id}',[ApiController::class,'DeleteEmployee']);
+// Search Employee Route
+Route::get('search-employee/{name}',[ApiController::class,'SearchEmployee']);
+
+// Route For Resource Controller API
+use App\Http\Controllers\ResourceControllerAPI;
+Route::resource('resourcecontrollerapi',ResourceControllerAPI::class);
