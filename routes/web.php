@@ -195,3 +195,4 @@ Route::get('relationship',[RelationshipController::class,'product_list']);
 Route::get('one-many',[RelationshipController::class,'One_to_Many']);
 // Route for Many-to-One Relationship
 Route::get('many-one',[RelationshipController::class,'Many_to_One']);
+
