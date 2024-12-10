@@ -82,6 +82,7 @@ Route::controller(StudentController::class)->group(function(){
 });
 
 // Middleware Example (Global Middleware)
+use App\Http\Middleware\CheckAge;
 Route::view('middleware','middleware');
 
 // Middleware Group on Single Route
