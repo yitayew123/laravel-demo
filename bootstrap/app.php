@@ -18,10 +18,10 @@ return Application::configure(basePath: dirname(__DIR__))
         // option 2 ---- Global Middleware
         // $middleware->use([
             // \App\Http\Middleware\CheckAge::class  ]);
-        // $middleware->appendToGroup("check1",[
-        //     CheckCountry::class,
-        //     CheckAge2::class 
-        // ]);
+        $middleware->appendToGroup("check1",[
+            CheckCountry::class,
+            CheckAge2::class 
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

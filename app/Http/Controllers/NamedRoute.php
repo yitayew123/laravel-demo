@@ -9,7 +9,7 @@ class NamedRoute extends Controller
 {
     //
     function show(){
-        // echo "Named Route Test";
+        //  echo "Named Route Test";
         return redirect()->to('home/user/profile');
         
     }
