@@ -1,5 +1,5 @@
 <div>
-    <h1>Welcome to Database User</h1>
+    <h3>Database Users Found In Your System</h3>
     <table border="1">
         <tr>
             <th>Name</th>
@@ -36,21 +36,25 @@
         height: 100vh;
     }
 
-    h1 {
+    h3 {
         text-align: center;
-        color: #333;
+        color: #4CAF50;
+        margin-bottom: 20px;
     }
 
     table {
-        width: 100%; /* Make table stretch to full width */
+        width: 100%; /* Make the table stretch to full width */
         border-collapse: collapse;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        table-layout: fixed; /* Ensures the table columns are evenly spaced */
     }
 
     th, td {
-        padding: 12px;
+        padding: 10px;
         text-align: left;
-        word-break: break-word; /* Ensures text wraps if it's too long */
+        overflow: hidden; /* Hides overflowing content */
+        text-overflow: ellipsis; /* Adds ellipsis for long text */
+        white-space: nowrap; /* Prevents text wrapping */
     }
 
     th {
@@ -78,5 +82,10 @@
         width: 90%; /* Container width adjusted */
         max-width: 1200px; /* Prevents excessive stretch on large screens */
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        overflow-x: auto; /* Adds horizontal scrolling for smaller screens */
+    }
+
+    table th, table td {
+        min-width: 100px; /* Sets a minimum width for columns */
     }
 </style>
