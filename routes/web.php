@@ -164,6 +164,11 @@ Route::post('imageupload',[FileUpload::class,'uploadimage']);
 Route::view('localization','localization');
 Route::view('LocalizationAbout','LocalizationAbout');
 
+// Localization for specific Route
+Route::get('localization/{lang}',function($lang){
+    App::setlocale($lang);
+    return view('localization');
+});
 
 // Inserting Data Using Form
 Route::view('add-employee','add-employee');
@@ -196,3 +201,4 @@ Route::get('relationship',[RelationshipController::class,'product_list']);
 Route::get('one-many',[RelationshipController::class,'One_to_Many']);
 // Route for Many-to-One Relationship
 Route::get('many-one',[RelationshipController::class,'Many_to_One']);
+
